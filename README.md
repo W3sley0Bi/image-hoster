@@ -16,11 +16,9 @@ The base URL format is:
 
 **Examples for this repo:**
 * **Latest version (simplest, but subject to caching):**
-  `https://cdn.jsdelivr.net/gh/wesley-obi/image-hoster/fitness-icon.png`
+  `https://cdn.jsdelivr.net/gh/W3sley0Bi/image-hoster/ebp-power-connector/ebp-power-connector-icon.png`
 * **Specific Branch (e.g., 'main'):**
-  `https://cdn.jsdelivr.net/gh/wesley-obi/image-hoster@main/fitness-icon.png`
-
-*(Note: Replace `wesley-obi` with your actual GitHub username if different, and adjust the file path accordingly.)*
+  `https://cdn.jsdelivr.net/gh/W3sley0Bi/image-hoster@main/ebp-power-connector/ebp-power-connector-icon.png`
 
 ### 3. Adding the URL to Supabase
 
@@ -36,7 +34,7 @@ Once you have your jsDelivr URL, you can store it in your Supabase database so y
 **Option B: Using SQL (SQL Editor)**
 ```sql
 UPDATE training_plans
-SET icon_url = 'https://cdn.jsdelivr.net/gh/wesley-obi/image-hoster@main/fitness-icon.png'
+SET icon_url = 'https://cdn.jsdelivr.net/gh/W3sley0Bi/image-hoster@main/ebp-power-connector/ebp-power-connector-icon.png'
 WHERE id = 'target-record-id';
 ```
 
@@ -44,7 +42,7 @@ WHERE id = 'target-record-id';
 ```typescript
 const { data, error } = await supabase
   .from('training_plans')
-  .update({ icon_url: 'https://cdn.jsdelivr.net/gh/wesley-obi/image-hoster@main/fitness-icon.png' })
+  .update({ icon_url: 'https://cdn.jsdelivr.net/gh/W3sley0Bi/image-hoster@main/ebp-power-connector/ebp-power-connector-icon.png' })
   .eq('id', 'target-record-id');
 
 if (error) {
@@ -57,6 +55,6 @@ if (error) {
 ## Key Tips & Limitations for 2026
 * **Caching:** jsDelivr has a heavy cache. If you update an icon but keep the same filename, it might take **up to 24 hours** for the CDN to serve the new version.
 * **Version Control (Cache Busting):** To bypass the cache immediately when updating an existing image, append a specific release tag or commit hash to the URL:
-  `https://cdn.jsdelivr.net/gh/wesley-obi/image-hoster@1.0.1/fitness-icon.png`
+  `https://cdn.jsdelivr.net/gh/W3sley0Bi/image-hoster@1.0.1/ebp-power-connector/ebp-power-connector-icon.png`
 * **File Limits:** Keep individual PNGs under **20MB**. (Standard icons will easily fall below this limit).
 * **Production Usage:** While reliable, jsDelivr's terms of service suggest avoiding "general-purpose file hosting" for massive traffic. For a personal project or a medium-sized site, this solution is perfectly fine.
